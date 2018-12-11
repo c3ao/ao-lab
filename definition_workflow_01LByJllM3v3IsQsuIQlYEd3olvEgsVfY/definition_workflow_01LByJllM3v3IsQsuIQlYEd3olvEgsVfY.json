@@ -7,16 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "01LAPX7pAHx6LpMgWqHqdwD4hLPACldtC",
-        "properties": {
-          "scope": "local",
-          "name": "local-loopcount",
-          "type": "datatype.integer"
-        },
-        "unique_name": "variable_workflow_01LCSSGoRsnTJ15kidu3sH4m6akGvFkYt",
-        "object_type": ""
-      },
-      {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
@@ -25,6 +15,16 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01LByUmfe548C3iZWVrTldC2OOcR0BVG9",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPX7pAHx6LpMgWqHqdwD4hLPACldtC",
+        "properties": {
+          "scope": "local",
+          "name": "local-loopcount",
+          "type": "datatype.integer"
+        },
+        "unique_name": "variable_workflow_01LCSSGoRsnTJ15kidu3sH4m6akGvFkYt",
         "object_type": ""
       }
     ],
@@ -56,6 +56,10 @@
             {
               "variable_to_update": "$workflow.definition_workflow_01LByJllM3v3IsQsuIQlYEd3olvEgsVfY.local.variable_workflow_01LByUmfe548C3iZWVrTldC2OOcR0BVG9$",
               "variable_value_new": "OK"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01LByJllM3v3IsQsuIQlYEd3olvEgsVfY.local.variable_workflow_01LCSSGoRsnTJ15kidu3sH4m6akGvFkYt$",
+              "variable_value_new": 0
             }
           ]
         },
