@@ -1,0 +1,59 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01LByJllM3v3IsQsuIQlYEd3olvEgsVfY",
+    "name": "pk-test1",
+    "title": "pk-test1",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "local-status",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01LByUmfe548C3iZWVrTldC2OOcR0BVG9",
+        "object_type": ""
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "pk-test1",
+      "favorite": false,
+      "target": {
+        "execute_on_target_group": false,
+        "execute_on_workflow_target": false,
+        "no_target": true,
+        "specify_on_workflow_start": false
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01LByVphnzb57NFRFfnRqsI5d0tatKyPj",
+        "name": "Set Variables",
+        "title": "Set Variables - Initialize",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "Set Variables - Initialize",
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01LByJllM3v3IsQsuIQlYEd3olvEgsVfY.local.variable_workflow_01LByUmfe548C3iZWVrTldC2OOcR0BVG9$",
+              "variable_value_new": "OK"
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  }
+}
