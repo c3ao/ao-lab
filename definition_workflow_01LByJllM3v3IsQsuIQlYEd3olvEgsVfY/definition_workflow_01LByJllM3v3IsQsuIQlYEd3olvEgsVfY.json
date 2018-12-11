@@ -7,6 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "01LAPX7pAHx6LpMgWqHqdwD4hLPACldtC",
+        "properties": {
+          "scope": "local",
+          "name": "local-loopcount",
+          "type": "datatype.integer"
+        },
+        "unique_name": "variable_workflow_01LCSSGoRsnTJ15kidu3sH4m6akGvFkYt",
+        "object_type": ""
+      },
+      {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
