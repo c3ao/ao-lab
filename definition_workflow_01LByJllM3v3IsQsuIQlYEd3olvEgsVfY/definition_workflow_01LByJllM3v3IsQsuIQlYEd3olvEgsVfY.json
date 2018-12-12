@@ -7,6 +7,16 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "01LAPX7pAHx6LpMgWqHqdwD4hLPACldtC",
+        "properties": {
+          "scope": "local",
+          "name": "local-loopcount",
+          "type": "datatype.integer"
+        },
+        "unique_name": "variable_workflow_01LCSSGoRsnTJ15kidu3sH4m6akGvFkYt",
+        "object_type": ""
+      },
+      {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
@@ -15,16 +25,6 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01LByUmfe548C3iZWVrTldC2OOcR0BVG9",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPX7pAHx6LpMgWqHqdwD4hLPACldtC",
-        "properties": {
-          "scope": "local",
-          "name": "local-loopcount",
-          "type": "datatype.integer"
-        },
-        "unique_name": "variable_workflow_01LCSSGoRsnTJ15kidu3sH4m6akGvFkYt",
         "object_type": ""
       }
     ],
@@ -64,10 +64,71 @@
           ]
         },
         "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LDAWJuUFKbCJ0Kn2siR1958iUzRvkMj",
+        "name": "HTTP Request",
+        "title": "HTTP Request - GET Workflows",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "$global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ.global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ$"
+            }
+          ],
+          "display_name": "HTTP Request - GET Workflows",
+          "method": "GET",
+          "relative_url": "/workflows",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": true,
+            "target_id": "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk"
+          }
+        },
+        "object_type": "definition_activity"
       }
     ],
     "categories": [
       "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
     ]
+  },
+  "targets": {
+    "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk": {
+      "unique_name": "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk",
+      "name": "This AO",
+      "title": "This AO",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "This AO",
+        "host": "172.16.237.130",
+        "no_runtime_user": true,
+        "path": "orch-ui/api",
+        "port": 31969,
+        "protocol": "http"
+      }
+    }
+  },
+  "variables": {
+    "variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ": {
+      "unique_name": "variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ",
+      "properties": {
+        "scope": "global",
+        "name": "This AO Bearer Token",
+        "type": "datatype.secure_string"
+      },
+      "object_type": "variable"
+    }
   }
 }
