@@ -9,17 +9,6 @@
       {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
-          "value": "posts",
-          "scope": "input",
-          "name": "path",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01LF6VTo18Ahq46rg0oRqFqaNOHUsCNWg",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
           "value": "",
           "scope": "output",
           "name": "output-json",
@@ -36,6 +25,17 @@
           "type": "datatype.integer"
         },
         "unique_name": "variable_workflow_01LF6ocH5tIsUFveUn3lu2A5uNYCMIxhU",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "posts",
+          "scope": "input",
+          "name": "path",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01LF6VTo18Ahq46rg0oRqFqaNOHUsCNWg",
         "object_type": ""
       }
     ],
@@ -88,6 +88,7 @@
         "type": "core.set_multiple_variables",
         "base_type": "activity",
         "properties": {
+          "description": "sample descrip",
           "display_name": "Set Variables - Outputs",
           "variables_to_update": [
             {
