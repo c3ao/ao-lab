@@ -1,0 +1,393 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01LFEI1q8uPI4fcKMRv4PM8NLfjgAF0lp",
+    "name": "pk-json-parse",
+    "title": "pk-json-parse",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "Leanne Graham",
+          "scope": "input",
+          "name": "input-name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01LFERs1JXZYIqLBdFK2dTIlUKWgHvMbv",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "space",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01LFEVWM8Gd0etw6aIvQsjXUwTgtOHYUM",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "Bret",
+          "scope": "input",
+          "name": "username",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01LFEaUazX1IacV7bv4mVeS9oXWemC2jB",
+        "object_type": ""
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "pk-json-parse",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01LF3RrbbDZ8AOGybqJDGpugaR3RNE1wp",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01LFEjPFVxUq80Yx5kvuPlk9wjqWXQCVQ",
+        "name": "pk get json typicode sample",
+        "title": "pk get json typicode sample",
+        "type": "workflow.sub_workflow",
+        "base_type": "subworkflow",
+        "properties": {
+          "display_name": "pk get json typicode sample",
+          "input": {
+            "variable_workflow_01LF6VTo18Ahq46rg0oRqFqaNOHUsCNWg": "users"
+          },
+          "target": {
+            "execute_on_this_target": false,
+            "no_target": false,
+            "use_workflow_target": true
+          },
+          "workflow_id": "definition_workflow_01LF4OeugBhpQ8ZPxv5wyZEElpC2Y7RzT"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LFFbBygO4MeKxRu5ISq4yRP07CBq4qI",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "display_name": "JSONPath Query",
+          "input_json": "$activity.definition_activity_01LFEjPFVxUq80Yx5kvuPlk9wjqWXQCVQ.output.variable_workflow_01LF6hniLPZhQWP3fq8oDUCC8wov8K4TP$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.[?(@.username==\"$workflow.definition_workflow_01LFEI1q8uPI4fcKMRv4PM8NLfjgAF0lp.input.variable_workflow_01LFEaUazX1IacV7bv4mVeS9oXWemC2jB$\")]",
+              "jsonpath_query_name": "name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LFGGgXv2SDg7breD2wkDiaN7BGJ9FkD",
+        "name": "Find String",
+        "title": "Find String",
+        "type": "core.find_string",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "Find String",
+          "searched_string": "$workflow.definition_workflow_01LFEI1q8uPI4fcKMRv4PM8NLfjgAF0lp.input.variable_workflow_01LFEaUazX1IacV7bv4mVeS9oXWemC2jB$",
+          "source": "$activity.definition_activity_01LFFbBygO4MeKxRu5ISq4yRP07CBq4qI.output.jsonpath_queries.name$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01LFGcbyQODsRburA1MOo1C7pLMnLTVPJ",
+        "name": "Condition Block",
+        "title": "If user found",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "If user found"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01LFGcdkzN1Zo04zkzUQwwGB1YqTf1jZp",
+            "name": "Condition Branch",
+            "title": "Found",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01LFGGgXv2SDg7breD2wkDiaN7BGJ9FkD.output.has_match$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "display_name": "Found"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01LFHWosT3hls0mWeJgDjFxrKdtFGQkPZ",
+                "name": "Send Email",
+                "title": "Send Email",
+                "type": "email.smtp_send_email",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "body": "We found: $workflow.definition_workflow_01LFEI1q8uPI4fcKMRv4PM8NLfjgAF0lp.input.variable_workflow_01LFEaUazX1IacV7bv4mVeS9oXWemC2jB$\n\n\n",
+                  "display_name": "Send Email",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "subject": "Found Person",
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01LF4CpB40TKo911rZEqE466pd78oqkXe"
+                  },
+                  "to": "pkunzler@cisco.com"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01LFGce9tXtCnxOTjCV2xD8N9jMnpiX3M",
+            "name": "Condition Branch",
+            "title": "Else",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01LFGGgXv2SDg7breD2wkDiaN7BGJ9FkD.output.has_match$",
+                "operator": "eq",
+                "right_operand": false
+              },
+              "display_name": "Else"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01LFHrWbhAmwBFOa6WFtGPU3XFyGiYTqY",
+                "name": "Send Email",
+                "title": "Send Email",
+                "type": "email.smtp_send_email",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "body": "We DID NOT Find: $workflow.definition_workflow_01LFEI1q8uPI4fcKMRv4PM8NLfjgAF0lp.input.variable_workflow_01LFEaUazX1IacV7bv4mVeS9oXWemC2jB$\n\n\n",
+                  "display_name": "Send Email",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "subject": "Found Person",
+                  "target": {
+                    "override_workflow_target": true,
+                    "target_id": "definition_target_01LF4CpB40TKo911rZEqE466pd78oqkXe"
+                  },
+                  "to": "pkunzler@cisco.com"
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "categories": [
+      "category_01LF2T3p37dtubMZrWcoMt2D03rGiZwg0"
+    ]
+  },
+  "categories": {
+    "category_01LF2T3p37dtubMZrWcoMt2D03rGiZwg0": {
+      "unique_name": "category_01LF2T3p37dtubMZrWcoMt2D03rGiZwg0",
+      "name": "PKCAT",
+      "title": "PKCAT",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01LF3RrbbDZ8AOGybqJDGpugaR3RNE1wp": {
+      "unique_name": "definition_target_01LF3RrbbDZ8AOGybqJDGpugaR3RNE1wp",
+      "name": "Sample JSON jsonplaceholder.typicode.com",
+      "title": "Sample JSON jsonplaceholder.typicode.com",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01LF2ktPKlJ68If7O2E0cApGgK4YhRd9U",
+        "disable_certificate_validation": true,
+        "display_name": "Sample JSON jsonplaceholder.typicode.com",
+        "host": "jsonplaceholder.typicode.com",
+        "no_runtime_user": false,
+        "protocol": "https"
+      }
+    },
+    "definition_target_01LF4CpB40TKo911rZEqE466pd78oqkXe": {
+      "unique_name": "definition_target_01LF4CpB40TKo911rZEqE466pd78oqkXe",
+      "name": "Email - outbound.cisco.com",
+      "title": "Email - outbound.cisco.com",
+      "type": "email.smtp_endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "default_runtime_user_id": "definition_runtime_user_01LF30hg8T3QNmdAE9JeA4MmIxFN3zKp0",
+        "display_name": "Email - outbound.cisco.com",
+        "port": 25,
+        "protocol": "SMTP",
+        "server": "outbound.cisco.com"
+      }
+    }
+  },
+  "runtime_users": {
+    "definition_runtime_user_01LF2ktPKlJ68If7O2E0cApGgK4YhRd9U": {
+      "unique_name": "definition_runtime_user_01LF2ktPKlJ68If7O2E0cApGgK4YhRd9U",
+      "name": "Sample HTTP Basic Auth ",
+      "title": "Sample HTTP Basic Auth ",
+      "type": "runtime_user.web-service_basic_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "Sample HTTP Basic Auth "
+      }
+    },
+    "definition_runtime_user_01LF30hg8T3QNmdAE9JeA4MmIxFN3zKp0": {
+      "unique_name": "definition_runtime_user_01LF30hg8T3QNmdAE9JeA4MmIxFN3zKp0",
+      "name": "Sample Email - pkunzler@cisco.com",
+      "title": "Sample Email - pkunzler@cisco.com",
+      "type": "runtime_user.email_credentials",
+      "base_type": "runtime_user",
+      "object_type": "definition_runtime_user",
+      "properties": {
+        "display_name": "Sample Email - pkunzler@cisco.com"
+      }
+    }
+  },
+  "subworkflows": [
+    {
+      "workflow": {
+        "unique_name": "definition_workflow_01LF4OeugBhpQ8ZPxv5wyZEElpC2Y7RzT",
+        "name": "pk-get-json-typicode-sample",
+        "title": "pk-get-json-typicode-sample",
+        "type": "generic.workflow",
+        "base_type": "workflow",
+        "variables": [
+          {
+            "schema_id": "01LAPX7pAHx6LpMgWqHqdwD4hLPACldtC",
+            "properties": {
+              "scope": "output",
+              "name": "output-status-code",
+              "type": "datatype.integer"
+            },
+            "unique_name": "variable_workflow_01LF6ocH5tIsUFveUn3lu2A5uNYCMIxhU",
+            "object_type": ""
+          },
+          {
+            "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+            "properties": {
+              "value": "posts",
+              "scope": "input",
+              "name": "path",
+              "type": "datatype.string"
+            },
+            "unique_name": "variable_workflow_01LF6VTo18Ahq46rg0oRqFqaNOHUsCNWg",
+            "object_type": ""
+          },
+          {
+            "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+            "properties": {
+              "value": "",
+              "scope": "output",
+              "name": "output-json",
+              "type": "datatype.string"
+            },
+            "unique_name": "variable_workflow_01LF6hniLPZhQWP3fq8oDUCC8wov8K4TP",
+            "object_type": ""
+          }
+        ],
+        "properties": {
+          "atomic": {
+            "is_atomic": false
+          },
+          "delete_workflow_instance": false,
+          "description": "description of my workflow - put a lot of details.\n",
+          "display_name": "pk-get-json-typicode-sample",
+          "favorite": false,
+          "target": {
+            "target_type": "web-service.endpoint",
+            "specify_on_workflow_start": true
+          }
+        },
+        "object_type": "definition_workflow",
+        "actions": [
+          {
+            "unique_name": "definition_activity_01LF8N8sb6ygfs1A8a4m0VNhWhMUf8zO9",
+            "name": "HTTP Request",
+            "title": "HTTP Request - typicode",
+            "type": "web-service.http_request",
+            "base_type": "activity",
+            "properties": {
+              "action_timeout": 180,
+              "allow_auto_redirect": true,
+              "content_type": "application/json",
+              "continue_on_error_status_code": true,
+              "display_name": "HTTP Request - typicode",
+              "method": "GET",
+              "relative_url": "$workflow.definition_workflow_01LF4OeugBhpQ8ZPxv5wyZEElpC2Y7RzT.input.variable_workflow_01LF6VTo18Ahq46rg0oRqFqaNOHUsCNWg$",
+              "runtime_user": {
+                "override_target_runtime_user": false,
+                "target_default": true
+              },
+              "target": {
+                "override_workflow_target": false,
+                "override_workflow_target_group_criteria": false,
+                "use_workflow_target": true,
+                "use_workflow_target_group": false
+              }
+            },
+            "object_type": "definition_activity"
+          },
+          {
+            "unique_name": "definition_activity_01LF9vfz3TnAVy7OFF2FwnyeIQBNynbZU",
+            "name": "Set Variables",
+            "title": "Set Variables - Outputs",
+            "type": "core.set_multiple_variables",
+            "base_type": "activity",
+            "properties": {
+              "description": "sample descrip",
+              "display_name": "Set Variables - Outputs",
+              "variables_to_update": [
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01LF4OeugBhpQ8ZPxv5wyZEElpC2Y7RzT.output.variable_workflow_01LF6hniLPZhQWP3fq8oDUCC8wov8K4TP$",
+                  "variable_value_new": "$activity.definition_activity_01LF8N8sb6ygfs1A8a4m0VNhWhMUf8zO9.output.response_body$"
+                },
+                {
+                  "variable_to_update": "$workflow.definition_workflow_01LF4OeugBhpQ8ZPxv5wyZEElpC2Y7RzT.output.variable_workflow_01LF6ocH5tIsUFveUn3lu2A5uNYCMIxhU$",
+                  "variable_value_new": "$activity.definition_activity_01LF8N8sb6ygfs1A8a4m0VNhWhMUf8zO9.output.status_code$"
+                }
+              ]
+            },
+            "object_type": "definition_activity"
+          }
+        ],
+        "categories": [
+          "category_01LF2T3p37dtubMZrWcoMt2D03rGiZwg0"
+        ]
+      }
+    }
+  ]
+}
