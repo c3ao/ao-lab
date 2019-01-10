@@ -7,27 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "01LAPXA0gsxItgusSkfaNh7pkh2RPjrDb",
-        "properties": {
-          "scope": "input",
-          "name": "AuthorizationHeader",
-          "type": "datatype.secure_string"
-        },
-        "unique_name": "variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Name",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
-        "object_type": ""
-      },
-      {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
@@ -37,7 +16,7 @@
           "description": "The variable ID which may be used for reading/updating later."
         },
         "unique_name": "variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5",
-        "object_type": ""
+        "object_type": "variable_workflow"
       },
       {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
@@ -49,7 +28,7 @@
           "description": "This must be a valid AO type."
         },
         "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
-        "object_type": ""
+        "object_type": "variable_workflow"
       },
       {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
@@ -60,7 +39,7 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw",
-        "object_type": ""
+        "object_type": "variable_workflow"
       },
       {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
@@ -71,7 +50,28 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH",
-        "object_type": ""
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXA0gsxItgusSkfaNh7pkh2RPjrDb",
+        "properties": {
+          "scope": "input",
+          "name": "AuthorizationHeader",
+          "type": "datatype.secure_string"
+        },
+        "unique_name": "variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -79,6 +79,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
+      "description": "This workflow creates a global variable.",
       "display_name": "Create Global Variable",
       "favorite": false,
       "target": {
