@@ -10,6 +10,30 @@
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
+          "scope": "output",
+          "name": "ID",
+          "type": "datatype.string",
+          "description": "The variable ID which may be used for reading/updating later."
+        },
+        "unique_name": "variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Type",
+          "type": "datatype.string",
+          "description": "This must be a valid AO type."
+        },
+        "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
           "scope": "input",
           "name": "Description",
           "type": "datatype.string"
@@ -37,28 +61,6 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "output",
-          "name": "ID",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Type",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
         "object_type": ""
       }
     ],
