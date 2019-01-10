@@ -1,6 +1,6 @@
 {
   "workflow": {
-    "unique_name": "definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt",
+    "unique_name": "definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju",
     "name": "Create Global Variable",
     "title": "Create Global Variable",
     "type": "generic.workflow",
@@ -97,7 +97,7 @@
         "base_type": "activity",
         "properties": {
           "display_name": "To Lower - Type",
-          "source": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE$"
+          "source": "$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE$"
         },
         "object_type": "definition_activity"
       },
@@ -115,7 +115,7 @@
           "custom_headers": [
             {
               "name": "Authorization",
-              "value": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
+              "value": "$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
             }
           ],
           "display_name": "HTTP Request - GET Schema ID",
@@ -164,13 +164,13 @@
         "properties": {
           "action_timeout": 180,
           "allow_auto_redirect": true,
-          "body": "{\n  \"schema_id\": \"$activity.definition_activity_01MgeNsFYH4jUOrWQgSlvLJ5dES3ifYnN.output.jsonpath_queries.schema_id$\",\n  \"title\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n$\",\n  \"properties\": {\n    \"scope\": \"global\",\n    \"name\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n$\",\n    \"description\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw$\",\n    \"type\": \"datatype.$activity.definition_activity_01MgcuZlnt54Tf6cKwAWwFIWXQtaS3s0u.output.lowercase_text$\",\n    \"value\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH$\"\n  }\n}",
+          "body": "{\n  \"schema_id\": \"$activity.definition_activity_01MgeNsFYH4jUOrWQgSlvLJ5dES3ifYnN.output.jsonpath_queries.schema_id$\",\n  \"title\": \"$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n$\",\n  \"properties\": {\n    \"scope\": \"global\",\n    \"name\": \"$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n$\",\n    \"description\": \"$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw$\",\n    \"type\": \"datatype.$activity.definition_activity_01MgcuZlnt54Tf6cKwAWwFIWXQtaS3s0u.output.lowercase_text$\",\n    \"value\": \"$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH$\"\n  }\n}",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "custom_headers": [
             {
               "name": "Authorization",
-              "value": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
+              "value": "$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
             }
           ],
           "display_name": "HTTP Request - POST Create Global Variable",
@@ -220,7 +220,7 @@
           "display_name": "Set Variables - Output",
           "variables_to_update": [
             {
-              "variable_to_update": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$",
+              "variable_to_update": "$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$",
               "variable_value_new": "$activity.definition_activity_01MgfiaZMcJvmGJBi5jeHdkEkA3cHUANk.output.jsonpath_queries.ID$"
             }
           ]
