@@ -7,28 +7,6 @@
     "base_type": "workflow",
     "variables": [
       {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Description",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Value",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH",
-        "object_type": ""
-      },
-      {
         "schema_id": "01LAPXA0gsxItgusSkfaNh7pkh2RPjrDb",
         "properties": {
           "scope": "input",
@@ -72,12 +50,33 @@
         },
         "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
         "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Description",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Value",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH",
+        "object_type": ""
       }
     ],
     "properties": {
       "atomic": {
-        "atomic_group": "Global Variables",
-        "is_atomic": true
+        "is_atomic": false
       },
       "delete_workflow_instance": false,
       "display_name": "Create Global Variable",
@@ -115,7 +114,7 @@
           "custom_headers": [
             {
               "name": "Authorization",
-              "value": "$global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ.global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ$"
+              "value": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
             }
           ],
           "display_name": "HTTP Request - GET Schema ID",
@@ -170,7 +169,7 @@
           "custom_headers": [
             {
               "name": "Authorization",
-              "value": "$global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ.global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ$"
+              "value": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
             }
           ],
           "display_name": "HTTP Request - POST Create Global Variable",
