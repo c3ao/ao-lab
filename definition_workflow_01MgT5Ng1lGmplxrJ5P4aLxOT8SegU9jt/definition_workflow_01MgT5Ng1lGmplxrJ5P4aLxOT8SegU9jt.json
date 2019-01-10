@@ -10,30 +10,6 @@
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
-          "scope": "output",
-          "name": "ID",
-          "type": "datatype.string",
-          "description": "The variable ID which may be used for reading/updating later."
-        },
-        "unique_name": "variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Type",
-          "type": "datatype.string",
-          "description": "This must be a valid AO type."
-        },
-        "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
           "scope": "input",
           "name": "Description",
           "type": "datatype.string"
@@ -53,6 +29,16 @@
         "object_type": ""
       },
       {
+        "schema_id": "01LAPXA0gsxItgusSkfaNh7pkh2RPjrDb",
+        "properties": {
+          "scope": "input",
+          "name": "AuthorizationHeader",
+          "type": "datatype.secure_string"
+        },
+        "unique_name": "variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq",
+        "object_type": ""
+      },
+      {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
@@ -62,11 +48,36 @@
         },
         "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
         "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "ID",
+          "type": "datatype.string",
+          "description": "The variable ID which may be used for reading/updating later."
+        },
+        "unique_name": "variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Type",
+          "type": "datatype.string",
+          "description": "This must be a valid AO type."
+        },
+        "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
+        "object_type": ""
       }
     ],
     "properties": {
       "atomic": {
-        "is_atomic": false
+        "atomic_group": "Global Variables",
+        "is_atomic": true
       },
       "delete_workflow_instance": false,
       "display_name": "Create Global Variable",
@@ -218,8 +229,19 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo"
     ]
+  },
+  "categories": {
+    "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo": {
+      "unique_name": "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo",
+      "name": "Global Variables",
+      "title": "Global Variables",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
   },
   "variables": {
     "variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ": {
