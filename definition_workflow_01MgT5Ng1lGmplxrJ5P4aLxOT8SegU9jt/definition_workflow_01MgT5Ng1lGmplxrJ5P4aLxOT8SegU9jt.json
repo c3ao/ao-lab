@@ -1,0 +1,129 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt",
+    "name": "Create Global Variable",
+    "title": "Create Global Variable",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "InitialValue",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgV4k81iNq9MxfNllYXGWyhPgsSdhhW",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Type",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
+        "object_type": ""
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Create Global Variable",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "specify_on_workflow_start": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01MgcuZlnt54Tf6cKwAWwFIWXQtaS3s0u",
+        "name": "To Lower",
+        "title": "To Lower - Type",
+        "type": "core.string2lower",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "To Lower - Type",
+          "source": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MgTvkQWXJ3RZFTbDtglg6T4tTNRCvtL",
+        "name": "HTTP Request",
+        "title": "HTTP Request - GET Schema ID",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "$global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ.global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ$"
+            }
+          ],
+          "display_name": "HTTP Request - GET Schema ID",
+          "method": "GET",
+          "relative_url": "/schemas/datatype.$activity.definition_activity_01MgcuZlnt54Tf6cKwAWwFIWXQtaS3s0u.output.lowercase_text$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "variables": {
+    "variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ": {
+      "unique_name": "variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ",
+      "properties": {
+        "scope": "global",
+        "name": "This AO Bearer Token",
+        "type": "datatype.secure_string"
+      },
+      "object_type": "variable"
+    }
+  }
+}
