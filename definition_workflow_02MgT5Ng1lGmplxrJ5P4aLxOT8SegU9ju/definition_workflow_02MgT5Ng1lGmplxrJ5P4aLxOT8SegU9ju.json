@@ -1,8 +1,8 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju",
-    "name": "Create Global Variable",
-    "title": "Create Global Variable",
+    "name": "Read Global Variable",
+    "title": "Read Global Variable",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
@@ -79,7 +79,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "Create Global Variable",
+      "display_name": "Read Global Variable",
       "favorite": false,
       "target": {
         "target_type": "web-service.endpoint",
@@ -158,7 +158,7 @@
       {
         "unique_name": "definition_activity_01Mgf2jgNEBxRQGCkURH9370uSeftq6Nc",
         "name": "HTTP Request",
-        "title": "HTTP Request - POST Create Global Variable",
+        "title": "HTTP Request - POST Read Global Variable",
         "type": "web-service.http_request",
         "base_type": "activity",
         "properties": {
@@ -173,7 +173,7 @@
               "value": "$workflow.definition_workflow_02MgT5Ng1lGmplxrJ5P4aLxOT8SegU9ju.input.variable_workflow_01Mgi1i6OAF4TWECfhYW7vTpp0pTzzXwq$"
             }
           ],
-          "display_name": "HTTP Request - POST Create Global Variable",
+          "display_name": "HTTP Request - POST Read Global Variable",
           "method": "POST",
           "relative_url": "/variables",
           "runtime_user": {
