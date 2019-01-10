@@ -10,6 +10,39 @@
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
+          "scope": "input",
+          "name": "Description",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Value",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
+        "object_type": ""
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
           "scope": "output",
           "name": "ID",
           "type": "datatype.string"
@@ -22,32 +55,10 @@
         "properties": {
           "value": "",
           "scope": "input",
-          "name": "InitialValue",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgV4k81iNq9MxfNllYXGWyhPgsSdhhW",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
           "name": "Type",
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01MgcZV8xeTQQ7EiUSPeXb1zbOHYgGubE",
-        "object_type": ""
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Name",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n",
         "object_type": ""
       }
     ],
@@ -107,6 +118,99 @@
             "use_workflow_target": true,
             "use_workflow_target_group": false
           }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MgeNsFYH4jUOrWQgSlvLJ5dES3ifYnN",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query - Schema ID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "display_name": "JSONPath Query - Schema ID",
+          "input_json": "$activity.definition_activity_01MgTvkQWXJ3RZFTbDtglg6T4tTNRCvtL.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.data_schema.schema_id",
+              "jsonpath_query_name": "schema_id",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01Mgf2jgNEBxRQGCkURH9370uSeftq6Nc",
+        "name": "HTTP Request",
+        "title": "HTTP Request - POST Create Global Variable",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n  \"schema_id\": \"$activity.definition_activity_01MgeNsFYH4jUOrWQgSlvLJ5dES3ifYnN.output.jsonpath_queries.schema_id$\",\n  \"title\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n$\",\n  \"properties\": {\n    \"scope\": \"global\",\n    \"name\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgTGu49UBrgBwRsxvxMd3UXlVU7XQ2n$\",\n    \"description\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgfOCw8UFF7dpbA0On260jzmpGFF2Dw$\",\n    \"value\": \"$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.input.variable_workflow_01MgfWL15LxDDPeYduY5eInagPhnkDgWH$\"\n  }\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "$global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ.global.variable_01LDBaGkKEmD8YDM9A4yrnQYldbeZ82ZQ$"
+            }
+          ],
+          "display_name": "HTTP Request - POST Create Global Variable",
+          "method": "POST",
+          "relative_url": "/variables",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MgfiaZMcJvmGJBi5jeHdkEkA3cHUANk",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query - Variable ID",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "display_name": "JSONPath Query - Variable ID",
+          "input_json": "$activity.definition_activity_01Mgf2jgNEBxRQGCkURH9370uSeftq6Nc.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.id",
+              "jsonpath_query_name": "ID",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01MgfoSWLPvcWYkhxZrrMwII8ac4RCHRA",
+        "name": "Set Variables",
+        "title": "Set Variables - Output",
+        "type": "core.set_multiple_variables",
+        "base_type": "activity",
+        "properties": {
+          "display_name": "Set Variables - Output",
+          "variables_to_update": [
+            {
+              "variable_to_update": "$workflow.definition_workflow_01MgT5Ng1lGmplxrJ5P4aLxOT8SegU9jt.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$",
+              "variable_value_new": "$activity.definition_activity_01MgfiaZMcJvmGJBi5jeHdkEkA3cHUANk.output.jsonpath_queries.ID$"
+            }
+          ]
         },
         "object_type": "definition_activity"
       }
