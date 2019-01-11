@@ -1,22 +1,11 @@
 {
   "workflow": {
     "unique_name": "definition_workflow_01GqKZ7L718sxhfFpPapxBfjHHjgdhJQl",
-    "name": "Get Value from Global Variable NVP String",
-    "title": "Get Value from Global Variable NVP String",
+    "name": "Global Variable NVP - Get Value",
+    "title": "Global Variable NVP - Get Value",
     "type": "generic.workflow",
     "base_type": "workflow",
     "variables": [
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "name1",
-          "scope": "input",
-          "name": "Name",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01GqkCASn7c6KAdK8Omq7QuZgkxXqlhQz",
-        "object_type": "variable_workflow"
-      },
       {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
@@ -38,6 +27,17 @@
         },
         "unique_name": "variable_workflow_01Gqk9yRX38u8PTfkzML2I6GMmXQ2669Z",
         "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "name1",
+          "scope": "input",
+          "name": "Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GqkCASn7c6KAdK8Omq7QuZgkxXqlhQz",
+        "object_type": "variable_workflow"
       }
     ],
     "properties": {
@@ -45,7 +45,7 @@
         "is_atomic": false
       },
       "delete_workflow_instance": false,
-      "display_name": "Get Value from Global Variable NVP String",
+      "display_name": "Global Variable NVP - Get Value",
       "favorite": false,
       "target": {
         "target_type": "web-service.endpoint",
