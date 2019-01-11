@@ -11,6 +11,17 @@
         "properties": {
           "value": "",
           "scope": "input",
+          "name": "GlobalVariableID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GqsN7XVioQH58F8TzWyRBrXIQSGIaks",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
           "name": "Name",
           "type": "datatype.string"
         },
@@ -26,17 +37,6 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "GlobalVariableID",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01GqsN7XVioQH58F8TzWyRBrXIQSGIaks",
         "object_type": "variable_workflow"
       }
     ],
@@ -139,7 +139,7 @@
           "continue_on_failure": true,
           "display_name": "Find String - Name",
           "searched_string": "|$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01GqsnyD97RgWh3XNWYUCFRKBIjUu1o2y$=",
-          "source": "$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.Value$"
+          "source": "$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.value$"
         },
         "object_type": "definition_activity"
       },
@@ -198,7 +198,7 @@
         "properties": {
           "action_timeout": 180,
           "allow_auto_redirect": true,
-          "body": "{\n  \"schema_id\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.schema_id$\",\n  \"title\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n  \"properties\": {\n    \"name\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n    \"value\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.value$|$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01GqsnyD97RgWh3XNWYUCFRKBIjUu1o2y$=$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX$|\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.description$\"\n  }\n}",
+          "body": "{\n  \"schema_id\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.schema_id$\",\n  \"title\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n  \"properties\": {\n    \"name\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n    \"value\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.value$$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01GqsnyD97RgWh3XNWYUCFRKBIjUu1o2y$=$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX$|\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.description$\"\n  }\n}",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
@@ -226,8 +226,19 @@
       }
     ],
     "categories": [
-      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+      "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo"
     ]
+  },
+  "categories": {
+    "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo": {
+      "unique_name": "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo",
+      "name": "Global Variables",
+      "title": "Global Variables",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
   },
   "targets": {
     "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk": {
