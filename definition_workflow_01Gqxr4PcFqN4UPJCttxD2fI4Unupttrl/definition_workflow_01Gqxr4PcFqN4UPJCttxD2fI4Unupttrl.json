@@ -7,6 +7,17 @@
     "base_type": "workflow",
     "variables": [
       {
+        "schema_id": "01LAPX6OeHCN4wPUkdDQlQ8Y3d9uNPZ8C",
+        "properties": {
+          "value": false,
+          "scope": "input",
+          "name": "Rename Variable to Include ID",
+          "type": "datatype.boolean"
+        },
+        "unique_name": "variable_workflow_01GRfJ10vnCTteKa8RbTX8NwmYID4Ihtx",
+        "object_type": "variable_workflow"
+      },
+      {
         "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
         "properties": {
           "value": "",
@@ -80,32 +91,72 @@
         "object_type": "definition_activity"
       },
       {
-        "unique_name": "definition_activity_01GqYawBwy6sG5avVgh5X1zZfprBRuHCQ",
-        "name": "HTTP Request",
-        "title": "HTTP Request - Update the GV Name",
-        "type": "web-service.http_request",
+        "unique_name": "definition_activity_01GRfjYgaEHYxP0Tr2FXolKkfMHUsiGrF",
+        "name": "Condition Block",
+        "title": "Condition Block - Rename Variable",
+        "type": "logic.if_else",
         "base_type": "activity",
         "properties": {
-          "action_timeout": 180,
-          "allow_auto_redirect": true,
-          "body": "{\n  \"title\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxV3UP8mpngqclY84huGHcWeiSjfRO$ - $activity.definition_activity_01GqY1LHqTO85o3U8OHIDsc0m4RibeXJZ.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$\",\n  \"properties\": {\n    \"name\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxV3UP8mpngqclY84huGHcWeiSjfRO$ - $activity.definition_activity_01GqY1LHqTO85o3U8OHIDsc0m4RibeXJZ.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$\",\n    \"value\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxwiN6wXNrrPGqiduNw4cpMmmDDULT$\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxxqAO5ofuqMbbgXDwlOh5xZI3stJ6$\"\n  }\n}",
-          "continue_on_error_status_code": false,
           "continue_on_failure": false,
-          "display_name": "HTTP Request - Update the GV Name",
-          "method": "PUT",
-          "relative_url": "/variables/$activity.definition_activity_01GqY1LHqTO85o3U8OHIDsc0m4RibeXJZ.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$",
-          "runtime_user": {
-            "override_target_runtime_user": false,
-            "target_default": true
-          },
-          "target": {
-            "override_workflow_target": false,
-            "override_workflow_target_group_criteria": false,
-            "use_workflow_target": true,
-            "use_workflow_target_group": false
-          }
+          "display_name": "Condition Block - Rename Variable"
         },
-        "object_type": "definition_activity"
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01GRfjZFekO9PORVxLoTA07BfHyBIMqj6",
+            "name": "Condition Branch",
+            "title": "Condition Branch - Rename",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GRfJ10vnCTteKa8RbTX8NwmYID4Ihtx$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Condition Branch - Rename"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01GqYawBwy6sG5avVgh5X1zZfprBRuHCQ",
+                "name": "HTTP Request",
+                "title": "HTTP Request - Update the GV Name",
+                "type": "web-service.http_request",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "allow_auto_redirect": true,
+                  "body": "{\n  \"title\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxV3UP8mpngqclY84huGHcWeiSjfRO$ - $activity.definition_activity_01GqY1LHqTO85o3U8OHIDsc0m4RibeXJZ.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$\",\n  \"properties\": {\n    \"name\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxV3UP8mpngqclY84huGHcWeiSjfRO$ - $activity.definition_activity_01GqY1LHqTO85o3U8OHIDsc0m4RibeXJZ.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$\",\n    \"value\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxwiN6wXNrrPGqiduNw4cpMmmDDULT$\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$workflow.definition_workflow_01Gqxr4PcFqN4UPJCttxD2fI4Unupttrl.input.variable_workflow_01GqxxqAO5ofuqMbbgXDwlOh5xZI3stJ6$\"\n  }\n}",
+                  "content_type": "application/json",
+                  "continue_on_error_status_code": false,
+                  "continue_on_failure": false,
+                  "custom_headers": [
+                    {
+                      "name": "Authorization",
+                      "value": "$global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R.global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R$"
+                    }
+                  ],
+                  "display_name": "HTTP Request - Update the GV Name",
+                  "method": "PUT",
+                  "relative_url": "/variables/$activity.definition_activity_01GqY1LHqTO85o3U8OHIDsc0m4RibeXJZ.output.variable_workflow_01MgTNR1XW6ycqKU0uGSuzQZtz0TcMgH5$",
+                  "runtime_user": {
+                    "override_target_runtime_user": false,
+                    "target_default": true
+                  },
+                  "target": {
+                    "override_workflow_target": false,
+                    "override_workflow_target_group_criteria": false,
+                    "use_workflow_target": true,
+                    "use_workflow_target_group": false
+                  }
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
       }
     ],
     "categories": [
