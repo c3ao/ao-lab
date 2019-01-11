@@ -11,6 +11,17 @@
         "properties": {
           "value": "",
           "scope": "input",
+          "name": "Value",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
           "name": "GlobalVariableID",
           "type": "datatype.string"
         },
@@ -26,17 +37,6 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01GqsnyD97RgWh3XNWYUCFRKBIjUu1o2y",
-        "object_type": "variable_workflow"
-      },
-      {
-        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
-        "properties": {
-          "value": "",
-          "scope": "input",
-          "name": "Value",
-          "type": "datatype.string"
-        },
-        "unique_name": "variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX",
         "object_type": "variable_workflow"
       }
     ],
@@ -198,7 +198,7 @@
         "properties": {
           "action_timeout": 180,
           "allow_auto_redirect": true,
-          "body": "{\n  \"schema_id\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.schema_id$\",\n  \"title\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n  \"properties\": {\n    \"name\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n    \"value\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.value$$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01GqsnyD97RgWh3XNWYUCFRKBIjUu1o2y$=$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX$|\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.description$\"\n  }\n}",
+          "body": "{\n  \"title\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n  \"properties\": {\n    \"name\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.name$\",\n    \"value\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.value$$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01GqsnyD97RgWh3XNWYUCFRKBIjUu1o2y$=$workflow.definition_workflow_01GqsHoz67I4sSQIRL2RpXGfiKvL3paUE.input.variable_workflow_01Gqsoo5m416460DpK1wRGfyjUYyxZgQX$|\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$activity.definition_activity_01GqszLS2VPdFBdyaceBppJoxsgJeNDkK.output.jsonpath_queries.description$\"\n  }\n}",
           "content_type": "application/json",
           "continue_on_error_status_code": false,
           "continue_on_failure": false,
