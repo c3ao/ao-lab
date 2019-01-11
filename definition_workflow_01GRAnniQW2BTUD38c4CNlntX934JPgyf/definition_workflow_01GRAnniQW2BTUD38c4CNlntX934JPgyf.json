@@ -1,0 +1,105 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01GRAnniQW2BTUD38c4CNlntX934JPgyf",
+    "name": "Delete Global Variable",
+    "title": "Delete Global Variable",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GRAQdKHmVE3Sy50HZDfVqb0gAGlZXGz",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Delete Global Variable",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01GRArHchjMFz0sAtRqEtuGV8eLCBuNjN",
+        "name": "HTTP Request",
+        "title": "HTTP Request - DELETE Variable",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "$global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R.global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R$"
+            }
+          ],
+          "display_name": "HTTP Request - DELETE Variable",
+          "method": "DELETE",
+          "relative_url": "/variables/$workflow.definition_workflow_01GRAnniQW2BTUD38c4CNlntX934JPgyf.input.variable_workflow_01GRAQdKHmVE3Sy50HZDfVqb0gAGlZXGz$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo"
+    ]
+  },
+  "categories": {
+    "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo": {
+      "unique_name": "category_01MghtaHJPUqhs8Ww445A5nDdrTl6v0xo",
+      "name": "Global Variables",
+      "title": "Global Variables",
+      "type": "basic.category",
+      "base_type": "category",
+      "category_type": "custom",
+      "object_type": "category"
+    }
+  },
+  "targets": {
+    "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk": {
+      "unique_name": "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk",
+      "name": "This AO",
+      "title": "This AO",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "This AO",
+        "host": "172.16.237.130",
+        "no_runtime_user": true,
+        "path": "orch-ui/api/v1",
+        "port": 31969,
+        "protocol": "http"
+      }
+    }
+  }
+}
