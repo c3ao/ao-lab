@@ -11,10 +11,32 @@
         "properties": {
           "value": "",
           "scope": "output",
-          "name": "ID",
+          "name": "Value",
           "type": "datatype.string"
         },
-        "unique_name": "variable_workflow_01GRefKViif82uqnsaysPIIuMZfRIjni3",
+        "unique_name": "variable_workflow_01GRFJ3pi6x6jv8z2soXZvyq4AOPUWGlc",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Description",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GRFKAEjUT8Mf1baMlKNoQ16Panp6yZi",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "Schema_ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GRFmLyy59Fe8TLQjUGkaDV9paWWrx0W",
         "object_type": "variable_workflow"
       },
       {
@@ -26,6 +48,17 @@
           "type": "datatype.string"
         },
         "unique_name": "variable_workflow_01GRaTiX53ogCnWTA2qHn5ApYoXnJrUdv",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "output",
+          "name": "ID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GRefKViif82uqnsaysPIIuMZfRIjni3",
         "object_type": "variable_workflow"
       }
     ],
@@ -113,8 +146,32 @@
           "input_json": "$activity.definition_activity_01GREKBcgDtKrWhz9HaXRHsvUrXeASECX.output.jsonpath_queries.variable$",
           "jsonpath_queries": [
             {
-              "jsonpath_query": "$[0].id",
+              "jsonpath_query": "$.id",
               "jsonpath_query_name": "id",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.properties.name",
+              "jsonpath_query_name": "name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.properties.value",
+              "jsonpath_query_name": "value",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.properties.description",
+              "jsonpath_query_name": "description",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.schema_id",
+              "jsonpath_query_name": "schema_id",
               "jsonpath_query_type": "string",
               "zdate_type_format": ""
             }
@@ -135,6 +192,18 @@
             {
               "variable_to_update": "$workflow.definition_workflow_01GRaPeaeVER8NTI8oW5UEdtWeKp8PqLd.output.variable_workflow_01GRefKViif82uqnsaysPIIuMZfRIjni3$",
               "variable_value_new": "$activity.definition_activity_01GREYglpLmaGfIcrtV9TuKY1xtd5h118.output.jsonpath_queries.id$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GRaPeaeVER8NTI8oW5UEdtWeKp8PqLd.output.variable_workflow_01GRFJ3pi6x6jv8z2soXZvyq4AOPUWGlc$",
+              "variable_value_new": "$activity.definition_activity_01GREYglpLmaGfIcrtV9TuKY1xtd5h118.output.jsonpath_queries.value$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GRaPeaeVER8NTI8oW5UEdtWeKp8PqLd.output.variable_workflow_01GRFKAEjUT8Mf1baMlKNoQ16Panp6yZi$",
+              "variable_value_new": "$activity.definition_activity_01GREYglpLmaGfIcrtV9TuKY1xtd5h118.output.jsonpath_queries.description$"
+            },
+            {
+              "variable_to_update": "$workflow.definition_workflow_01GRaPeaeVER8NTI8oW5UEdtWeKp8PqLd.output.variable_workflow_01GRFmLyy59Fe8TLQjUGkaDV9paWWrx0W$",
+              "variable_value_new": "$activity.definition_activity_01GREYglpLmaGfIcrtV9TuKY1xtd5h118.output.jsonpath_queries.schema_id$"
             }
           ]
         },
