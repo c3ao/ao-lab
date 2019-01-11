@@ -1,0 +1,324 @@
+{
+  "workflow": {
+    "unique_name": "definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR",
+    "name": "Global Variable NVP - Update Value",
+    "title": "Global Variable NVP - Update Value",
+    "type": "generic.workflow",
+    "base_type": "workflow",
+    "variables": [
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Value",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GR05334Am2uksLWpGE9IDexLwQv1KlR",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "local",
+          "name": "ValuePayload",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GR0zuv2bV6ajlvXAcJ5bHT8MisagXTn",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "GlobalVariableID",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GR01N8RPJwpX5C2j40xR5k1SxJwjlXl",
+        "object_type": "variable_workflow"
+      },
+      {
+        "schema_id": "01LAPXAj3yu5PO0DQ2HC8yeHNtoBNLRwp",
+        "properties": {
+          "value": "",
+          "scope": "input",
+          "name": "Name",
+          "type": "datatype.string"
+        },
+        "unique_name": "variable_workflow_01GR03FEQeANlCo0Zf0pF6rgiFvSZFvtb",
+        "object_type": "variable_workflow"
+      }
+    ],
+    "properties": {
+      "atomic": {
+        "is_atomic": false
+      },
+      "delete_workflow_instance": false,
+      "display_name": "Global Variable NVP - Update Value",
+      "favorite": false,
+      "target": {
+        "target_type": "web-service.endpoint",
+        "target_id": "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk",
+        "execute_on_workflow_target": true
+      }
+    },
+    "object_type": "definition_workflow",
+    "actions": [
+      {
+        "unique_name": "definition_activity_01GqzV0y7ieNLQGX5ma3AAeEZoiIfnwlj",
+        "name": "HTTP Request",
+        "title": "HTTP Request - Get Variable",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "$global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R.global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R$"
+            }
+          ],
+          "display_name": "HTTP Request - Get Variable",
+          "method": "GET",
+          "relative_url": "/variables/$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR01N8RPJwpX5C2j40xR5k1SxJwjlXl$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw",
+        "name": "JSONPath Query",
+        "title": "JSONPath Query - Global Variable",
+        "type": "corejava.jsonpathquery",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "continue_on_failure": false,
+          "display_name": "JSONPath Query - Global Variable",
+          "input_json": "$activity.definition_activity_01GqzV0y7ieNLQGX5ma3AAeEZoiIfnwlj.output.response_body$",
+          "jsonpath_queries": [
+            {
+              "jsonpath_query": "$.properties.value",
+              "jsonpath_query_name": "value",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.properties.name",
+              "jsonpath_query_name": "name",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.properties.description",
+              "jsonpath_query_name": "description",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            },
+            {
+              "jsonpath_query": "$.schema_id",
+              "jsonpath_query_name": "schema_id",
+              "jsonpath_query_type": "string",
+              "zdate_type_format": ""
+            }
+          ]
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GR0L1T3yxXwM9QL99bhG15YAmFyBIXj",
+        "name": "Find String",
+        "title": "Find String",
+        "type": "core.find_string",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Find String",
+          "searched_string": "|$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR03FEQeANlCo0Zf0pF6rgiFvSZFvtb$=",
+          "source": "$activity.definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw.output.jsonpath_queries.value$"
+        },
+        "object_type": "definition_activity"
+      },
+      {
+        "unique_name": "definition_activity_01GR0n9TLY3TfyUDgVywjEM02x8OMTpDA",
+        "name": "Condition Block",
+        "title": "Look for Name",
+        "type": "logic.if_else",
+        "base_type": "activity",
+        "properties": {
+          "continue_on_failure": false,
+          "display_name": "Look for Name"
+        },
+        "object_type": "definition_activity",
+        "blocks": [
+          {
+            "unique_name": "definition_activity_01GR0nBuRxMlb6kmTz9hXOpO1veBrJWc6",
+            "name": "Condition Branch",
+            "title": "Has a Match",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01GR0L1T3yxXwM9QL99bhG15YAmFyBIXj.output.has_match$",
+                "operator": "eq",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Has a Match"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01GR1wXYyfmfA8FOfY53DDkLdijqy9COx",
+                "name": "Execute Python Script",
+                "title": "Execute Python Script",
+                "type": "python3.script",
+                "base_type": "activity",
+                "properties": {
+                  "action_timeout": 180,
+                  "continue_on_failure": false,
+                  "display_name": "Execute Python Script",
+                  "script": "import sys\nfullStr = sys.argv[1]\nnameStr = \"|\" + sys.argv[2] + \"=\"\nvalStr = sys.argv[3]\nbeforeStr = fullStr[0:fullStr.find(nameStr)]\nsub1 = fullStr[fullStr.find(nameStr)+1:]\nposStart = sub1.find(\"|\")+1\nafterStr = sub1[posStart:]\nnvp = nameStr + valStr + \"|\"\nnewStr = beforeStr + nvp + afterStr\nprint (newStr)",
+                  "script_arguments": [
+                    "$activity.definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw.output.jsonpath_queries.value$",
+                    "$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR03FEQeANlCo0Zf0pF6rgiFvSZFvtb$",
+                    "$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR05334Am2uksLWpGE9IDexLwQv1KlR$"
+                  ]
+                },
+                "object_type": "definition_activity"
+              },
+              {
+                "unique_name": "definition_activity_01GR4vvEZRIkkGOhpTsPITWgDaxJbwSaW",
+                "name": "Set Variables",
+                "title": "Set Variables - Results of Python",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "display_name": "Set Variables - Results of Python",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.local.variable_workflow_01GR0zuv2bV6ajlvXAcJ5bHT8MisagXTn$",
+                      "variable_value_new": "$activity.definition_activity_01GR1wXYyfmfA8FOfY53DDkLdijqy9COx.output.response_body$"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          },
+          {
+            "unique_name": "definition_activity_01GR0nbMxF5dRXfcbjmVJQNvcBR8PApZq",
+            "name": "Condition Branch",
+            "title": "Does Not Have a Match",
+            "type": "logic.condition_block",
+            "base_type": "activity",
+            "properties": {
+              "condition": {
+                "left_operand": "$activity.definition_activity_01GR0L1T3yxXwM9QL99bhG15YAmFyBIXj.output.has_match$",
+                "operator": "ne",
+                "right_operand": true
+              },
+              "continue_on_failure": false,
+              "display_name": "Does Not Have a Match"
+            },
+            "object_type": "definition_activity",
+            "actions": [
+              {
+                "unique_name": "definition_activity_01GR11Ae8zm7CNc4nxowQDD6EGhRBUqnV",
+                "name": "Set Variables",
+                "title": "Set Variables - Append NVP",
+                "type": "core.set_multiple_variables",
+                "base_type": "activity",
+                "properties": {
+                  "continue_on_failure": false,
+                  "description": "No match, so add the value to the end of the string.",
+                  "display_name": "Set Variables - Append NVP",
+                  "variables_to_update": [
+                    {
+                      "variable_to_update": "$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.local.variable_workflow_01GR0zuv2bV6ajlvXAcJ5bHT8MisagXTn$",
+                      "variable_value_new": "$activity.definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw.output.jsonpath_queries.value$$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR03FEQeANlCo0Zf0pF6rgiFvSZFvtb$=$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR05334Am2uksLWpGE9IDexLwQv1KlR$|"
+                    }
+                  ]
+                },
+                "object_type": "definition_activity"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "unique_name": "definition_activity_01GR5alxRSlnVM5WcXj868rfEuZhL2WeC",
+        "name": "HTTP Request",
+        "title": "HTTP Request - PUT Variable",
+        "type": "web-service.http_request",
+        "base_type": "activity",
+        "properties": {
+          "action_timeout": 180,
+          "allow_auto_redirect": true,
+          "body": "{\n  \"title\": \"$activity.definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw.output.jsonpath_queries.name$\",\n  \"properties\": {\n    \"name\": \"$activity.definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw.output.jsonpath_queries.name$\",\n    \"value\": \"$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.local.variable_workflow_01GR0zuv2bV6ajlvXAcJ5bHT8MisagXTn$\",\n    \"scope\": \"global\",\n    \"type\": \"datatype.string\",\n    \"description\": \"$activity.definition_activity_01GR09J6NTezOxTftOp22OPtbJAgn6Blw.output.jsonpath_queries.description$\"\n  }\n}",
+          "content_type": "application/json",
+          "continue_on_error_status_code": false,
+          "continue_on_failure": false,
+          "custom_headers": [
+            {
+              "name": "Authorization",
+              "value": "$global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R.global.01LDBaGdhaaeseN3FeAlbffFjwXnLTQ5R$"
+            }
+          ],
+          "display_name": "HTTP Request - PUT Variable",
+          "method": "PUT",
+          "relative_url": "/variables/$workflow.definition_workflow_01GqzQOMDISQxRlVgKbtVwGH69EBMB7xR.input.variable_workflow_01GR01N8RPJwpX5C2j40xR5k1SxJwjlXl$",
+          "runtime_user": {
+            "override_target_runtime_user": false,
+            "target_default": true
+          },
+          "target": {
+            "override_workflow_target": false,
+            "override_workflow_target_group_criteria": false,
+            "use_workflow_target": true,
+            "use_workflow_target_group": false
+          }
+        },
+        "object_type": "definition_activity"
+      }
+    ],
+    "categories": [
+      "category_1BMfMXSnJMyt5Ihqi7rWJr5N8cf"
+    ]
+  },
+  "targets": {
+    "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk": {
+      "unique_name": "definition_target_01LDAR4d0BrHhRMkmQ1ysyXG3CWB56Ngk",
+      "name": "This AO",
+      "title": "This AO",
+      "type": "web-service.endpoint",
+      "base_type": "target",
+      "object_type": "definition_target",
+      "properties": {
+        "disable_certificate_validation": true,
+        "display_name": "This AO",
+        "host": "172.16.237.130",
+        "no_runtime_user": true,
+        "path": "orch-ui/api/v1",
+        "port": 31969,
+        "protocol": "http"
+      }
+    }
+  }
+}
